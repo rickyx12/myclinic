@@ -372,6 +372,7 @@ function getDoctors(recipientId,specialization) {
           }
         }
       }
+
     }else if(specialization == 'ophthalmology') {
 
         response = {
@@ -432,11 +433,11 @@ function getDoctors(recipientId,specialization) {
           }
         }
       }
-    
+
     }else {
 
       response = {
-        "text":"Please select doctor specialization";
+        "text":"Please select doctor specialization"
       }
     }
 
