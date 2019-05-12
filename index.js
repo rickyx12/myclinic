@@ -121,7 +121,7 @@ function handlePostback(sender_psid, received_postback) {
   
   }else if(payload == 'find_pharmacy'){
 
-    console.log('find pharmacy wow');
+    showPharmacy(sender_psid);
   } else{
 
     console.log('No payload');
@@ -173,6 +173,38 @@ function sendGetStarted(recipientId) {
 }
 
 
+
+function showPharmacy(recipientId) {
+
+    let response;
+ 
+    response = {
+      "attachment":{
+      "type":"template",
+      "payload":{
+      "template_type":"generic",
+      "elements":[
+          {
+            "title":"The Generics Pharmacy",
+            "image_url":"http://pick-n-ride.000webhostapp.com/tgp.png",
+            "subtitle":"17-A Kamuning Rd, Diliman, Quezon City, 1100 Metro Manila",
+              "buttons":[
+                {
+                  "type":"postback",
+                  "payload":"chat_tgp",
+                  "title":"Chat"
+                }
+              ]           
+          }
+        ]
+        }
+      }
+    }
+
+
+  return callSendAPI(recipientId,response);
+
+}
 
 function typing(sender_psid) {
   
