@@ -374,64 +374,65 @@ function getDoctors(recipientId,specialization) {
       }
     }else if(specialization == 'ophthalmology') {
 
-      response = {
-      "attachment":{
-        "type":"template",
-        "payload":{
-          "template_type":"generic",
-          "elements":[
-              {
-                "title":"Dr. Baquir, Allan Troy",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/baquir.jpg",
-                "subtitle":"Ophthalmologist",
-                "buttons":[
-                    {
-                      "type":"postback",
-                      "title":"Chat Now",
-                      "payload":"doctor_baquir"
-                    }
-                  ]
-              },
-              {
-                "title":"Dr. Duran, Samuel",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/duran.jpg",
-                "subtitle":"Ophthalmologist",
-                "buttons":[
-                    {
-                      "type":"postback",
-                      "title":"Chat Now",
-                      "payload":"chat_duran"
-                    }
-                  ]
-              },
-              {
-                "title":"Dr. Ordona, Dennis",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/ordona.jpg",
-                "subtitle":"Ophthalmologist",
-                "buttons":[
-                    {
-                      "type":"postback",
-                      "title":"Chat Now",
-                      "payload":"chat_ordona"
-                    }
-                  ]
-              },
-              {
-                "title":"Dr. Bueno, Emmmanuel",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/bueno.jpg",
-                "subtitle":"Ophthalmologist",
-                "buttons":[
-                    {
-                      "type":"postback",
-                      "title":"Chat Now",
-                      "payload":"chat_bueno"
-                    }
-                  ]
-              }
-            ]
+        response = {
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"generic",
+            "elements":[
+                {
+                  "title":"Dr. Baquir, Allan Troy",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/baquir.jpg",
+                  "subtitle":"Ophthalmologist",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"doctor_baquir"
+                      }
+                    ]
+                },
+                {
+                  "title":"Dr. Duran, Samuel",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/duran.jpg",
+                  "subtitle":"Ophthalmologist",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"chat_duran"
+                      }
+                    ]
+                },
+                {
+                  "title":"Dr. Ordona, Dennis",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/ordona.jpg",
+                  "subtitle":"Ophthalmologist",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"chat_ordona"
+                      }
+                    ]
+                },
+                {
+                  "title":"Dr. Bueno, Emmmanuel",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/bueno.jpg",
+                  "subtitle":"Ophthalmologist",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"chat_bueno"
+                      }
+                    ]
+                }
+              ]
+          }
         }
       }
-
+    
     }else {
 
       response = {
