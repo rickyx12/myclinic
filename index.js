@@ -109,7 +109,12 @@ function handleMessage(sender_psid, received_message) {
 
   if(payload == 'select_pediatrician') {
 
-    getDoctors(sender_psid);
+    getDoctors(sender_psid,'pediatrician');
+  
+  }else if(payload == 'select_ophthalmologist') {
+
+    getDoctors(sender_psid,'ophthalmology');
+  
   }else {
 
     console.log('no payload');
@@ -303,66 +308,134 @@ function showDoctorsSpecialization(recipientId) {
 }
 
 
-function getDoctors(recipientId) {
+function getDoctors(recipientId,specialization) {
 
     let response;
  
-    response = {
+    if(specialization == 'pediatrician') { 
+
+      response = {
+        "attachment":{
+          "type":"template",
+          "payload":{
+            "template_type":"generic",
+            "elements":[
+                {
+                  "title":"Dr. Lavadia, Ma. Angela",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/lavadia.jpg",
+                  "subtitle":"Pediatrician",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"doctor_lavadia"
+                      }
+                    ]
+                },
+                {
+                  "title":"Dr. Manlongat, Tricia",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/manlongat1.jpg",
+                  "subtitle":"Pediatrician",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"chat_manlongay"
+                      }
+                    ]
+                },
+                {
+                  "title":"Dr. Prieto, Elizabeth",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/prieto.jpg",
+                  "subtitle":"Pediatrician",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"chat_prieto"
+                      }
+                    ]
+                },
+                {
+                  "title":"Dr. Dela Paz, Cecile",
+                  "image_url":"https://pick-n-ride.000webhostapp.com/doctor/delapaz.jpg",
+                  "subtitle":"Pediatrician",
+                  "buttons":[
+                      {
+                        "type":"postback",
+                        "title":"Chat Now",
+                        "payload":"chat_delapaz"
+                      }
+                    ]
+                }
+              ]
+          }
+        }
+      }
+    }else if(specialization == 'ophthalmology') {
+
+      response = {
       "attachment":{
         "type":"template",
         "payload":{
           "template_type":"generic",
           "elements":[
               {
-                "title":"Dr. Lavadia, Ma. Angela",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/lavadia.jpg",
-                "subtitle":"Pediatrician",
+                "title":"Dr. Baquir, Allan Troy",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/baquir.jpg",
+                "subtitle":"Ophthalmologist",
                 "buttons":[
                     {
                       "type":"postback",
                       "title":"Chat Now",
-                      "payload":"doctor_lavadia"
+                      "payload":"doctor_baquir"
                     }
                   ]
               },
               {
-                "title":"Dr. Manlongat, Tricia",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/manlongat1.jpg",
-                "subtitle":"Pediatrician",
+                "title":"Dr. Duran, Samuel",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/duran.jpg",
+                "subtitle":"Ophthalmologist",
                 "buttons":[
                     {
                       "type":"postback",
                       "title":"Chat Now",
-                      "payload":"chat_manlongay"
+                      "payload":"chat_duran"
                     }
                   ]
               },
               {
-                "title":"Dr. Prieto, Elizabeth",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/prieto.jpg",
-                "subtitle":"Pediatrician",
+                "title":"Dr. Ordona, Dennis",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/ordona.jpg",
+                "subtitle":"Ophthalmologist",
                 "buttons":[
                     {
                       "type":"postback",
                       "title":"Chat Now",
-                      "payload":"chat_prieto"
+                      "payload":"chat_ordona"
                     }
                   ]
               },
               {
-                "title":"Dr. Dela Paz, Cecile",
-                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/delapaz.jpg",
-                "subtitle":"Pediatrician",
+                "title":"Dr. Bueno, Emmmanuel",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/bueno.jpg",
+                "subtitle":"Ophthalmologist",
                 "buttons":[
                     {
                       "type":"postback",
                       "title":"Chat Now",
-                      "payload":"chat_delapaz"
+                      "payload":"chat_bueno"
                     }
                   ]
               }
             ]
         }
+      }
+
+    }else {
+
+      response = {
+        "text":"Please select doctor specialization";
       }
     }
 
