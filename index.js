@@ -222,7 +222,7 @@ function showPharmacy(recipientId) {
           },
           {
             "title":"Mercury Drug",
-            "image_url":"http://pick-n-ride.000webhostapp.com/mercury2.jpg",
+            "image_url":"http://pick-n-ride.000webhostapp.com/mercury.jpg",
             "subtitle":"1103 Scout Borromeo St Diliman, Quezon City, Metro Manila",
               "buttons":[
                 {
