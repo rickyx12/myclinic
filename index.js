@@ -107,7 +107,13 @@ function handleMessage(sender_psid, received_message) {
 
   var payload = received_message.quick_reply.payload;
 
-  console.log(payload);
+  if(payload == 'select_pediatrician') {
+
+    getDoctors(sender_psid);
+  }else {
+
+    console.log('no payload');
+  }
 
 }
 
@@ -291,6 +297,73 @@ function showDoctorsSpecialization(recipientId) {
           "payload":"select_general_med"
         }
       ]
+    }
+
+  return callSendAPI(recipientId,response);
+}
+
+
+function getDoctors(recipientId) {
+
+    let response;
+ 
+    response = {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
+              {
+                "title":"Dr. Lavadia, Ma. Angela",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/lavadia.jpg",
+                "subtitle":"Pediatrician",
+                "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"doctor_lavadia"
+                    }
+                  ]
+              },
+              {
+                "title":"Dr. Manlongat, Tricia",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/manlongat1.jpg",
+                "subtitle":"Pediatrician",
+                "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"chat_manlongay"
+                    }
+                  ]
+              },
+              {
+                "title":"Dr. Prieto, Elizabeth",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/prieto.jpg",
+                "subtitle":"Pediatrician",
+                "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"chat_prieto"
+                    }
+                  ]
+              },
+              {
+                "title":"Dr. Dela Paz, Cecile",
+                "image_url":"https://pick-n-ride.000webhostapp.com/doctor/delapaz.jpg",
+                "subtitle":"Pediatrician",
+                "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"chat_delapaz"
+                    }
+                  ]
+              }
+            ]
+        }
+      }
     }
 
   return callSendAPI(recipientId,response);
