@@ -119,6 +119,9 @@ function handlePostback(sender_psid, received_postback) {
     
     sendGetStarted(sender_psid);
   
+  }else if(payload == 'find_pharmacy'){
+
+    console.log('find pharmacy wow');
   } else{
 
     console.log('No payload');
