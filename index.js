@@ -199,7 +199,7 @@ function showPharmacy(recipientId) {
           {
             "title":"Rose Pharmacy",
             "image_url":"http://pick-n-ride.000webhostapp.com/rose.jpg",
-            "subtitle":"Manahan, 1 Aurora Blvd Corner Anonas Street, Project 3, Quezon, 1102 Metro Manila",
+            "subtitle":"Manahan, 1 Aurora Blvd Corner Anonas Street, Project 3, Quezon City, 1102 Metro Manila",
               "buttons":[
                 {
                   "type":"postback",
@@ -211,7 +211,7 @@ function showPharmacy(recipientId) {
           {
             "title":"Generika Drugstore",
             "image_url":"http://pick-n-ride.000webhostapp.com/generika2.png",
-            "subtitle":"1 Anonas Corner Molave STS. Project 3 Quezon City, Quezon City, 1121 Metro Manila",
+            "subtitle":"1 Anonas Corner Molave STS. Project 3 Quezon City, 1121 Metro Manila",
               "buttons":[
                 {
                   "type":"postback",
@@ -219,7 +219,19 @@ function showPharmacy(recipientId) {
                   "title":"Chat"
                 }
               ]           
-          }                    
+          },
+          {
+            "title":"Mercury Drug",
+            "image_url":"http://pick-n-ride.000webhostapp.com/mercury.jpg",
+            "subtitle":"1103 Scout Borromeo St Diliman, Quezon City, Metro Manila",
+              "buttons":[
+                {
+                  "type":"postback",
+                  "payload":"chat_tgp",
+                  "title":"Chat"
+                }
+              ]           
+          }                               
         ]
         }
       }
