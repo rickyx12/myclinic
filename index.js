@@ -140,50 +140,6 @@ function sendGetStarted(recipientId) {
 }
 
 
-function startBooking(recipientId) {
-
-  let howToUseText1,
-      howToUseText2,
-      howToUseText3;
- 
-  howToUseText1 = {
-    "text":"We need to know the\u000A\u000APickup:\u000ADropoff:\u000AFare:\u000A\u000Ato find you a driver."
-  }
-
-  howToUseText2 = {
-    "text":"FORMAT \u000A\u000APU<colon>Pickup location\u000ADO<colon>Dropoff location\u000AF<colon>fare amount"
-  }
-
-  howToUseText3 = {
-    "text":"EXAMPLE \u000A\u000APU:Tomas morato starbucks\u000ADO:Inoza Tower BGC\u000AF:150"
-  }
-
-  callSendAPI(recipientId,howToUseText1).then(() => {
-    return callSendAPI(recipientId,howToUseText2).then(() => {
-      return callSendAPI(recipientId,howToUseText3);
-    });
-  });
-
-}
-
- function noBooking(recipientId) {
-   
-   let response;
-
-   response = {
-    "text": "Okay then, anyway if you change your mind just tap this 👇",
-    "quick_replies":[
-      {
-        "content_type":"text",
-        "title":"Start Booking",
-        "payload":"GET_STARTED_PAYLOAD"
-      }
-    ]
-   }
-
-   callSendAPI(recipientId,response);
-
- }
 
 function typing(sender_psid) {
   
