@@ -105,7 +105,7 @@ app.get('/webhook', (req, res) => {
 // Handles messages events
 function handleMessage(sender_psid, received_message) {
 
-  var payload = received_message.quick_replies.payload;
+  var payload = received_message;
 
   console.log(payload);
 
