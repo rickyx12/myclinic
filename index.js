@@ -122,7 +122,10 @@ function handlePostback(sender_psid, received_postback) {
   }else if(payload == 'find_pharmacy'){
 
     showPharmacy(sender_psid);
-  } else{
+  }else if(payload == 'find_doctor') {
+
+    showDoctorsSpecialization(sender_psid);
+  }else{
 
     console.log('No payload');
 
@@ -240,6 +243,55 @@ function showPharmacy(recipientId) {
 
   return callSendAPI(recipientId,response);
 
+}
+
+
+function showDoctorsSpecialization(recipientId) {
+
+    let response;
+ 
+    response = {
+      "text":"What kind of doctor you are looking for?",
+      "quick_replies":[
+        {
+          "content_type":"text",
+          "title":"Pediatrician",
+          "payload":"select_pediatrician"
+        },
+        {
+          "content_type":"text",
+          "title":"Ophthalmologist",
+          "payload":"select_ophthalmologist"
+        },
+        {
+          "content_type":"text",
+          "title":"OB Gyne",
+          "payload":"select_obgyne"
+        },
+        {
+          "content_type":"text",
+          "title":"Dermatologist",
+          "payload":"select_dermatologist"
+        },
+        {
+          "content_type":"text",
+          "title":"Orthopedic",
+          "payload":"select_orthopedic"
+        },
+        {
+          "content_type":"text",
+          "title":"Internal Med",
+          "payload":"select_internalmed"
+        },
+        {
+          "content_type":"text",
+          "title":"General Med",
+          "payload":"select_general_med"
+        }
+      ]
+    }
+
+  return callSendAPI(recipientId,response);
 }
 
 function typing(sender_psid) {
