@@ -133,7 +133,29 @@ function sendGetStarted(recipientId) {
     let response;
  
     response = {
-      "text":"Hello, kamusta?"
+      "attachment":{
+        "payload":{
+          "template_type":"button",
+          "text":"Hello, we can provide you the following services",
+          "buttons":[
+            {
+              "type":"postback",
+              "payload":"pharmacy",
+              "text":"Find Pharmacy"
+            },
+            {
+              "type":"postback",
+              "payload":"doctor",
+              "text":"Find Doctor"
+            },
+            {
+              "type":"postback",
+              "payload":"laboratory",
+              "text":"Find Laboratory"
+            }
+          ]
+        }
+      }
     }
 
      return callSendAPI(recipientId,response);
