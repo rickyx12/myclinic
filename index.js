@@ -134,29 +134,37 @@ function sendGetStarted(recipientId) {
  
     response = {
       "attachment":{
-        "payload":{
-          "template_type":"button",
-          "text":"Hello, we can provide you the following services",
-          "buttons":[
-            {
-              "type":"postback",
-              "payload":"pharmacy",
-              "title":"Find Pharmacy"
-            },
-            {
-              "type":"postback",
-              "payload":"doctor",
-              "title":"Find Doctor"
-            },
-            {
-              "type":"postback",
-              "payload":"laboratory",
-              "title":"Find Laboratory"
-            }
-          ]
+      "type":"template",
+      "payload":{
+      "template_type":"generic",
+      "elements":[
+          {
+            "title":"MyRx Medical Plaza",
+            "image_url":"http://pick-n-ride.000webhostapp.com/doctors.jpg",
+            "subtitle":"We can provide you the following services",
+              "buttons":[
+                {
+                  "type":"postback",
+                  "payload":"find_pharmacy",
+                  "title":"Find Pharmacy"
+                },
+                {
+                  "type":"postback",
+                  "payload":"find_doctor",
+                  "title":"Find Doctor"
+                },
+                {
+                  "type":"postback",
+                  "payload":"find_laboratory",
+                  "title":"Find Laboratory"
+                }
+              ]           
+          }
+        ]
         }
       }
     }
+
 
      return callSendAPI(recipientId,response);
 }
