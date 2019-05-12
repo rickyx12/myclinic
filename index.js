@@ -195,7 +195,19 @@ function showPharmacy(recipientId) {
                   "title":"Chat"
                 }
               ]           
-          }
+          },
+          {
+            "title":"Rose Pharmacy",
+            "image_url":"http://pick-n-ride.000webhostapp.com/rose.jpg",
+            "subtitle":"Manahan, 1 Aurora Blvd Corner Anonas Street, Project 3, Quezon, 1102 Metro Manila",
+              "buttons":[
+                {
+                  "type":"postback",
+                  "payload":"chat_tgp",
+                  "title":"Chat"
+                }
+              ]           
+          }          
         ]
         }
       }
