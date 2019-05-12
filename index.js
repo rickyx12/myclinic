@@ -210,7 +210,7 @@ function showPharmacy(recipientId) {
           },
           {
             "title":"Generika Drugstore",
-            "image_url":"http://pick-n-ride.000webhostapp.com/generika1.png",
+            "image_url":"http://pick-n-ride.000webhostapp.com/generika2.png",
             "subtitle":"1 Anonas Corner Molave STS. Project 3 Quezon City, Quezon City, 1121 Metro Manila",
               "buttons":[
                 {
