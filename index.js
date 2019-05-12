@@ -106,7 +106,7 @@ app.get('/webhook', (req, res) => {
 function handleMessage(sender_psid, received_message) {
 
 
-  if(received_message.quick_reply.payload) {
+  if(received_message.quick_reply) {
     var payload = received_message.quick_reply.payload;
 
     if(payload == 'select_pediatrician') {
