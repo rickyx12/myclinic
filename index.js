@@ -105,18 +105,23 @@ app.get('/webhook', (req, res) => {
 // Handles messages events
 function handleMessage(sender_psid, received_message) {
 
-  var payload = received_message.quick_reply.payload;
 
-  if(payload == 'select_pediatrician') {
+  if(received_message.quick_reply.payload) {
+    var payload = received_message.quick_reply.payload;
 
-    getDoctors(sender_psid,'pediatrician');
-  
-  }else if(payload == 'select_ophthalmologist') {
+    if(payload == 'select_pediatrician') {
 
-    getDoctors(sender_psid,'ophthalmology');
-  
+      getDoctors(sender_psid,'pediatrician');
+    
+    }else if(payload == 'select_ophthalmologist') {
+
+      getDoctors(sender_psid,'ophthalmology');
+    
+    }else {
+
+      console.log('no payload');
+    }
   }else {
-
     console.log('no payload');
   }
 
