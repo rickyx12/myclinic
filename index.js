@@ -106,6 +106,7 @@ app.get('/webhook', (req, res) => {
 function handleMessage(sender_psid, received_message) {
 
 
+
 }
 
 // Handles messaging_postbacks events
@@ -125,6 +126,9 @@ function handlePostback(sender_psid, received_postback) {
   }else if(payload == 'find_doctor') {
 
     showDoctorsSpecialization(sender_psid);
+  }else if(payload == 'select_pediatrician') {
+
+    console.log('get Pediatrician');
   }else{
 
     console.log('No payload');
