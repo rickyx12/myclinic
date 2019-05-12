@@ -144,6 +144,9 @@ function handlePostback(sender_psid, received_postback) {
   }else if(payload == 'find_doctor') {
 
     showDoctorsSpecialization(sender_psid);
+  }else if(payload == 'find_laboratory') {
+
+    showLaboratory(sender_psid);
   }else{
 
     console.log('No payload');
@@ -445,6 +448,94 @@ function getDoctors(recipientId,specialization) {
         "text":"Please select doctor specialization"
       }
     }
+
+  return callSendAPI(recipientId,response);
+}
+
+
+function showLaboratory(recipientId) {
+
+  let response;
+
+  response = {
+      "attachment":{
+        "type":"template",
+        "payload":{
+          "template_type":"generic",
+          "elements":[
+              {
+                "title":"Health Wise Diagnostic Laboratory",
+                "image_url":"https://pick-n-ride.000webhostapp.com/laboratory/healthwise.jpg",
+                "subtitle":"Richtown Tower, Mayhaligue St, Tondo, Metro Manila, 1003 Metro Manila",
+                "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"View Services",
+                      "payload":"view_services_healthwise"
+                    },
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"laboraotory_healthwise"
+                    }
+                  ]
+              },
+              {
+                "title":"United Diagnostic Laboratory",
+                "image_url":"https://pick-n-ride.000webhostapp.com/laboratory/intercon.png",
+                "subtitle":"Taft Ave, Paco, Manila, 1000 Metro Manila",
+                "buttons":[
+                  {
+                    "type":"postback",
+                    "title":"View Services",
+                    "payload":"view_services_intercon"
+                  },
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"laboratory_intercon"
+                    }
+                  ]
+              },
+              {
+                "title":"Singapore Diagnostics",
+                "image_url":"https://pick-n-ride.000webhostapp.com/laboratory/singapore.png",
+                "subtitle":"4F Sterling Centre, 131 Dela Rosa St (corner of Ormaza St), Legazpi Village, Makati, 1229 Metro Manila",
+                "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"View Services",
+                      "payload":"view_services_singapore"
+                    },
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"laboratory_singapore"
+                    }
+                  ]
+              },
+              {
+                "title":"Exact Check Diagnostic Center",
+                "image_url":"https://pick-n-ride.000webhostapp.com/laboratory/exactcheck.jpg",
+                "subtitle":"238 Banawe, Cor. Pagataan &, Panalturan, Quezon City, 1115 Metro Manila",
+                "buttons":[
+                    {
+                      "type":"postback",
+                      "title":"Views Services",
+                      "payload":"view_services_exactcheck"
+                    },
+                    {
+                      "type":"postback",
+                      "title":"Chat Now",
+                      "payload":"laboratory_exactcheck"
+                    }
+                  ]
+              }
+            ]
+        }
+      }
+    }
+
 
   return callSendAPI(recipientId,response);
 }
