@@ -141,17 +141,17 @@ function sendGetStarted(recipientId) {
             {
               "type":"postback",
               "payload":"pharmacy",
-              "text":"Find Pharmacy"
+              "title":"Find Pharmacy"
             },
             {
               "type":"postback",
               "payload":"doctor",
-              "text":"Find Doctor"
+              "title":"Find Doctor"
             },
             {
               "type":"postback",
               "payload":"laboratory",
-              "text":"Find Laboratory"
+              "title":"Find Laboratory"
             }
           ]
         }
