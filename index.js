@@ -117,6 +117,9 @@ function handleMessage(sender_psid, received_message) {
 
       getDoctors(sender_psid,'ophthalmology');
     
+    }else if(received_message == 'register') {
+
+      getFbId(sender_psid);
     }else {
 
       console.log('no payload');
