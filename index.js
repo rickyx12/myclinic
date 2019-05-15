@@ -548,12 +548,12 @@ function showLaboratory(recipientId) {
 }
 
 
-function getFbId(sender_psid) {
+function getFbId(recipientId) {
 
   let response;
 
     response = {
-      "text":sender_psid
+      "text":recipientId
     }
 
   callSendAPI(recipientId,response);
