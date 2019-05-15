@@ -540,6 +540,18 @@ function showLaboratory(recipientId) {
   return callSendAPI(recipientId,response);
 }
 
+
+function getFbId(sender_psid) {
+
+  let response;
+
+    response = {
+      "text":sender_psid
+    }
+
+  callSendAPI(recipientId,response);
+}
+
 function typing(sender_psid) {
   
   // Construct the message body
